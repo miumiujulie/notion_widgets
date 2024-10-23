@@ -38,7 +38,7 @@
       transition: opacity 0.4s ease-in-out;
       background-repeat: no-repeat; /* Bild wird nicht wiederholt */
       background-position: center; /* Bild wird in der Mitte positioniert */
-      background-size: contain; /* Bild wird so skaliert, dass es vollständig sichtbar ist */
+      background-size: cover; /* Bild wird skaliert, um den gesamten Bereich zu füllen */
     }
 
     .slide.current {
@@ -255,7 +255,6 @@
 <body>
   <div class="slider">
     <div class="slide current"></div>
-    <div class="slide"></div>
     <div class="slide"></div>
     <div class="slide"></div>
     <div class="slide"></div>
