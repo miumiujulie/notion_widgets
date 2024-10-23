@@ -2,312 +2,312 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Image Slider</title>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap");
+    <meta charset="UTF-8">
+    <title>Image Slider</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap");
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      font-family: "Lexend", sans-serif;
-      background-color: #362a2b;
-      color: #e5ebf3;
-      overflow: hidden; /* Verhindert das Scrollen */
-    }
+        body {
+            font-family: "Lexend", sans-serif;
+            background-color: #362a2b;
+            color: #e5ebf3;
+            overflow: hidden; /* Verhindert das Scrollen */
+        }
 
-    .slider {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-    }
+        .slider {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
 
-    .slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity 0.4s ease-in-out;
-      background-repeat: no-repeat; /* Bild wird nicht wiederholt */
-      background-position: center; /* Bild wird in der Mitte positioniert */
-      background-size: contain; /* Bild wird so skaliert, dass es vollständig sichtbar ist */
-    }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+            background-repeat: no-repeat; /* Bild wird nicht wiederholt */
+            background-position: center; /* Bild wird in der Mitte positioniert */
+            background-size: contain; /* Bild wird so skaliert, dass es vollständig sichtbar ist */
+        }
 
-    .slide.current {
-      opacity: 1;
-    }
+        .slide.current {
+            opacity: 1;
+        }
 
-    .slide:first-child {
-      background: url("balcony.jpg") no-repeat center top/cover;
-    }
+        /* Hier kannst du die Bild-URLs anpassen */
+        .slide:first-child {
+            background: url("balcony.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(2) {
-      background: url("big%20piano.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(2) {
+            background: url("big%20piano.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(3) {
-      background: url("black%20tshirt%20with%20brown%20bag.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(3) {
+            background: url("black%20tshirt%20with%20brown%20bag.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(4) {
-      background: url("books.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(4) {
+            background: url("books.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(5) {
-      background: url("camera.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(5) {
+            background: url("camera.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(6) {
-      background: url("clothes.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(6) {
+            background: url("clothes.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(7) {
-      background: url("cocktails.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(7) {
+            background: url("cocktails.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(8) {
-      background: url("coffe%20study.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(8) {
+            background: url("coffe%20study.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(9) {
-      background: url("cutesy%20shoes.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(9) {
+            background: url("cutesy%20shoes.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(10) {
-      background: url("diing.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(10) {
+            background: url("diing.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(11) {
-      background: url("discipline.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(11) {
+            background: url("discipline.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(12) {
-      background: url("drinking%20water.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(12) {
+            background: url("drinking%20water.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(13) {
-      background: url("flower%20balcony.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(13) {
+            background: url("flower%20balcony.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(14) {
-      background: url("glasses.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(14) {
+            background: url("glasses.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(15) {
-      background: url("going%20eating.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(15) {
+            background: url("going%20eating.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(16) {
-      background: url("gym.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(16) {
+            background: url("gym.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(17) {
-      background: url("hot%20person%20at%20work.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(17) {
+            background: url("hot%20person%20at%20work.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(18) {
-      background: url("hotgirl.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(18) {
+            background: url("hotgirl.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(19) {
-      background: url("i%20am%20excited%20about%20everything.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(19) {
+            background: url("i%20am%20excited%20about%20everything.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(20) {
-      background: url("jazz%20bar.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(20) {
+            background: url("jazz%20bar.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(21) {
-      background: url("kitchen.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(21) {
+            background: url("kitchen.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(22) {
-      background: url("library.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(22) {
+            background: url("library.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(23) {
-      background: url("marks.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(23) {
+            background: url("marks.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(24) {
-      background: url("moving%20out%20living%20alone.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(24) {
+            background: url("moving%20out%20living%20alone.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(25) {
-      background: url("office%20siren%20fit.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(25) {
+            background: url("office%20siren%20fit.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(26) {
-      background: url("office%20siren.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(26) {
+            background: url("office%20siren.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(27) {
-      background: url("office.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(27) {
+            background: url("office.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(28) {
-      background: url("piano%20performance.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(28) {
+            background: url("piano%20performance.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(29) {
-      background: url("picnic.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(29) {
+            background: url("picnic.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(30) {
-      background: url("pilates%20and%20yoga.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(30) {
+            background: url("pilates%20and%20yoga.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(31) {
-      background: url("pretty%20and%20smart.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(31) {
+            background: url("pretty%20and%20smart.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(32) {
-      background: url("reading%20and%20balcony.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(32) {
+            background: url("reading%20and%20balcony.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(33) {
-      background: url("reading.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(33) {
+            background: url("reading.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(34) {
-      background: url("saving%20money.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(34) {
+            background: url("saving%20money.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(35) {
-      background: url("school.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(35) {
+            background: url("school.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(36) {
-      background: url("skin%20care.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(36) {
+            background: url("skin%20care.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(37) {
-      background: url("study.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(37) {
+            background: url("study.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(38) {
-      background: url("studying%20on%20bed.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(38) {
+            background: url("studying%20on%20bed.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(39) {
-      background: url("studying.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(39) {
+            background: url("studying.jpg") no-repeat center/contain;
+        }
 
-    .slide:nth-child(40) {
-      background: url("walking%20with%20drink.jpg") no-repeat center top/cover;
-    }
+        .slide:nth-child(40) {
+            background: url("walking%20with%20drink.jpg") no-repeat center/contain;
+        }
 
-    .buttons {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-    }
+        .buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
 
-    .buttons button {
-      border: 2px solid #e5ebf3;
-      background-color: transparent;
-      color: #e5ebf3;
-      cursor: pointer;
-      padding: 13px 15px;
-      border-radius: 50%;
-      outline: none;
-    }
+        .buttons button {
+            border: 2px solid #e5ebf3;
+            background-color: transparent;
+            color: #e5ebf3;
+            cursor: pointer;
+            padding: 13px 15px;
+            border-radius: 50%;
+            outline: none;
+        }
 
-    .buttons button:hover {
-      background-color: #e5ebf3;
-      color: #362a2b;
-    }
-  </style>
+        .buttons button:hover {
+            background-color: #e5ebf3;
+            color: #362a2b;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="slider">
-    <div class="slide current"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-  </div>
-  <div class="buttons">
-    <button id="prev"><i class="fas fa-chevron-left"></i></button>
-    <button id="next"><i class="fas fa-chevron-right"></i></button>
-  </div>
-  <script>
-    const slides = document.querySelectorAll('.slide');
-    const prevButton = document.getElementById('prev');
-    const nextButton = document.getElementById('next');
+    <div class="slider">
+        <div class="slide current"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+    </div>
+    <div class="buttons">
+        <button id="prev"><i class="fas fa-chevron-left"></i></button>
+        <button id="next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
 
-    let currentIndex = 0;
+        let currentIndex = 0;
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove('current');
-        if (i === index) {
-          slide.classList.add('current');
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('current');
+                if (i === index) {
+                    slide.classList.add('current');
+                }
+            });
         }
-      });
-    }
 
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
-    }
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length; // Zeigt das nächste Bild an
+            showSlide(currentIndex);
+        }
 
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      showSlide(currentIndex);
-    }
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length; // Zeigt das vorherige Bild an
+            showSlide(currentIndex);
+        }
 
-    nextButton.addEventListener('click', nextSlide);
-    prevButton.addEventListener('click', prevSlide);
-  </script>
+        nextButton.addEventListener('click', nextSlide);
+        prevButton.addEventListener('click', prevSlide);
+    </script>
 </body>
 
 </html>
