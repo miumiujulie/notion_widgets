@@ -247,34 +247,44 @@
         <button id="next"><i class="fas fa-chevron-right"></i></button>
     </div>
     <script>
-        const slides = document.querySelectorAll('.slide');
-        const prevButton = document.getElementById('prev');
-        const nextButton = document.getElementById('next');
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
 
-        let currentIndex = 0;
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.remove('current');
-                if (i === index) {
-                    slide.classList.add('current');
-                }
-            });
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('current');
+        if (i === index) {
+          slide.classList.add('current');
         }
+      });
+    }
 
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % slides.length; // Zeigt das nächste Bild an
-            showSlide(currentIndex);
-        }
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length; // Loop back to the first slide
+      showSlide(currentIndex);
+    }
 
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length; // Zeigt das vorherige Bild an
-            showSlide(currentIndex);
-        }
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length; // Loop back to the last slide
+      showSlide(currentIndex);
+    }
 
-        nextButton.addEventListener('click', nextSlide);
-        prevButton.addEventListener('click', prevSlide);
-    </script>
+    // Event listeners for buttons
+    document.getElementById('next').addEventListener('click', nextSlide);
+    document.getElementById('prev').addEventListener('click', prevSlide);
+
+    // Event listener for keyboard arrows
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight') {
+        nextSlide();
+      } else if (event.key === 'ArrowLeft') {
+        prevSlide();
+      }
+    });
+
+    // Show the first slide
+    showSlide(currentIndex);
+  </script>
 </body>
 
 </html>
