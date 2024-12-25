@@ -1,108 +1,75 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-
-	<!-- Google Font -->
-
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-	<!-------->
-
-	<style>
-	* {
-		margin: 0;
-		padding: 0;
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-	}
-
-	.navMenu {
-    font-family: "Overpass", serif;		
-    padding: 8px;
-		text-align: center;
-		margin: 7px auto;
-		width: fit-content;
-		border-radius: 12px; /* Runden der Ecken */
-	}
-
-	.navMenu a {
-		color: #272727;
-		text-decoration: none;
-		text-transform: uppercase;
-		display: inline-block;
-		padding: 6px;
-		border-radius: 8px; /* Runden der Links */
-	}
-
-	.background {
-		background-color: #ece5f0;
-	}
-
-	.border {
-		border: 1px solid #cccccc;
-		border-radius: 10px; /* Runden der Umrandung */
-	}
-
-	.navMenu a:hover {
-		color: #d09c0b;
-	}
-</style>
-
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .navMenu {
+      font-family: "Overpass", serif;
+      padding: 8px;
+      text-align: center;
+      margin: 7px auto;
+      width: fit-content;
+      border-radius: 12px;
+    }
+    .navMenu a {
+      color: #272727;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 6px;
+      border-radius: 8px;
+    }
+    .background {
+      background-color: #ece5f0;
+    }
+    .border {
+      border: 1px solid #cccccc;
+      border-radius: 10px;
+    }
+    .navMenu a:hover {
+      color: #d09c0b;
+    }
+  </style>
 </head>
-
 <body>
+  <nav class="navMenu border">
+    <a id="pinterest" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-heart"></i> Pinterest</a>
+    <a id="chatgpt" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-message"></i> ChatGPT</a>
+    <a id="youtube" onclick="navigate(this.id)" href="#"> <i class="fa-brands fa-youtube"></i> Youtube</a>
+    <a id="canva" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-paintbrush"></i> Canva</a>
+    <a id="gmail" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-envelope"></i> Gmail</a>
+    <a id="hvv" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-bus"></i> HVV</a>
+  </nav>
 
-	<nav class="navMenu  border">
-		<a id="home" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-heart"></i> Home</a>
-    <a id="dream-life" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-circle-user"></i> Dreamlife</a>
-    <a id="goals" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-compass"></i> Goals</a>
-    <a id="reading" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-book"></i> Reading</a>
-    <a id="accounting" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-calculator"></i> Accounting</a>
-    <a id="watching" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-tv"></i> Watching</a>
-    <a id="wishlist" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-star"></i> Wishlist</a>
-    
+  <script>
+    function navigate(id) {
+      if (id === 'pinterest') {
+        window.open("https://de.pinterest.com", "_blank").focus();
+      } else if (id === 'chatgpt') {
+        window.open("https://chatgpt.com/?model=auto", "_blank").focus();
+      } else if (id === 'youtube') {
+        window.open("https://www.youtube.com/", "_blank").focus();
+      } else if (id === 'canva') {
+        window.open("https://www.canva.com", "_blank").focus();
+      } else if (id === 'gmail') {
+        window.open("https://mail.google.com/mail/u/0/#inbox", "_blank").focus();
+      } else if (id === 'hvv') {
+        window.open("https://www.hvv.de", "_blank").focus();
+      }
 
-
-
-	</nav>
-
-
-	<script>
-
-		let direction = "horizontal";
-		if (direction === "vertical") {
-			document.head.insertAdjacentHTML("beforeend", <style>.navMenu a {display: block; text-align:left; margin:7px} i{width:15px; margin-right:5px} .navMenu{margin:3px}</style>)
-		}
-
-
-		function navigate(id) {
-
-			if (id == 'home')
-				window.open("https://www.notion.so/juliqe/2025-127cc70c5244808d8421ca0c6810d0a3?pvs=4", '_blank').focus();
-			else if (id == "dream-life")
-				window.open("https://www.notion.so/juliqe/dreamlife-128cc70c524480f1b6c2f7bcd57e2c60?pvs=4", '_blank').focus();
-        else if (id == "goals")
-				window.open("https://www.notion.so/juliqe/goals-128cc70c5244802385bbf4e19e603dbe?pvs=4", '_blank').focus();
-      else if (id == "reading")
-				window.open("https://www.notion.so/juliqe/reading-128cc70c52448075a31cfb9f7f9fc402?pvs=4", '_blank').focus();
-      else if (id == "accounting")
-				window.open("https://www.notion.so/juliqe/accounting-128cc70c524480768797def57b05caaf?pvs=4", '_blank').focus();
-      else if (id == "watching")
-				window.open("https://www.notion.so/juliqe/watching-128cc70c5244809abfd6e4065b506726?pvs=4", '_blank').focus();
-      else if (id == "wishlist")
-				window.open("https://www.notion.so/juliqe/wishlist-128cc70c52448074be7cea4dff3686af?pvs=4", '_blank').focus();
-
-
-		}
-	</script>
-
-
+    }
+  </script>
 </body>
-
 </html>
